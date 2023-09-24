@@ -3,14 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:photo_clean_architecture/features/photo/presentation/bloc/photo/local/local_photo_bloc.dart';
 import 'package:photo_clean_architecture/features/photo/presentation/widgets/photo_widget.dart';
 
-class BookMarkPage extends StatefulWidget {
-  const BookMarkPage({super.key});
+class BookmarkPage extends StatefulWidget {
+  const BookmarkPage({super.key});
 
   @override
-  State<BookMarkPage> createState() => _BookMarkPageState();
+  State<BookmarkPage> createState() => _BookmarkPageState();
 }
 
-class _BookMarkPageState extends State<BookMarkPage> {
+class _BookmarkPageState extends State<BookmarkPage> {
   @override
   void initState() {
     context.read<LocalPhotoBloc>().add(GetSavedPhoto());
@@ -21,7 +21,7 @@ class _BookMarkPageState extends State<BookMarkPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Book Mark"),
+        title: const Text("Bookmark"),
       ),
       body: BlocBuilder<LocalPhotoBloc, LocalPhotoState>(
         builder: (context, state) {

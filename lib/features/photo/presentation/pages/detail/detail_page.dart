@@ -5,8 +5,9 @@ import 'package:photo_clean_architecture/features/photo/presentation/bloc/photo/
 
 class DetailPage extends StatefulWidget {
   final PhotoEntity? photoEntity;
+  final String title;
 
-  const DetailPage({super.key, this.photoEntity});
+  const DetailPage({super.key, required this.title, this.photoEntity});
 
   @override
   State<DetailPage> createState() => _DetailPageState();
@@ -17,9 +18,7 @@ class _DetailPageState extends State<DetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Detail",
-        ),
+        title: Text(widget.title),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8),

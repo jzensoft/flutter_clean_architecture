@@ -20,31 +20,24 @@ class PhotoWidget extends StatelessWidget {
           onViewDetail!(photoEntity!);
         }
       },
-      child: Container(
-        padding: const EdgeInsetsDirectional.all(7),
-        child: Row(
-          children: [
-            _buildImage(),
-            Flexible(
-              child: Text(photoEntity!.title),
-            ),
-            if (onRemove != null)
-              GestureDetector(
+      child: ListTile(
+        onTap: () {
+          if (onViewDetail != null) {
+            onViewDetail!(photoEntity!);
+          }
+        },
+        leading: _buildImage(),
+        title: Text(photoEntity!.title),
+        trailing: onRemove != null
+            ? GestureDetector(
                 onTap: () {
                   if (onRemove != null) {
                     onRemove!(photoEntity!);
                   }
                 },
-                child: const SizedBox(
-                  width: 50,
-                  height: 50,
-                  child: Icon(Icons.remove),
-                ),
+                child: const Icon(Icons.delete),
               )
-            else
-              const SizedBox()
-          ],
-        ),
+            : const SizedBox(),
       ),
     );
   }

@@ -28,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
           actions: [
             GestureDetector(
-              onTap: () => context.go("/book_mark"),
+              onTap: () => context.go("/bookmark"),
               child: const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Icon(Icons.bookmark),
